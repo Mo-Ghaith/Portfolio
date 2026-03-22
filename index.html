@@ -3,410 +3,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mohamed Salah — Full-Stack Engineer & AI Innovator. Building immersive digital experiences from Cairo, EG." />
-  <meta name="keywords" content="Mohamed Salah, Full-Stack Developer, AI Engineer, React, Python, Cairo" />
-  <meta name="author" content="Mohamed Salah Abdel Hamid" />
+  <meta name="description" content="Mohamed Awni Ghaith — Data Analyst skilled in Python, SQL, Power BI & Tableau." />
+  <title>Mohamed Awni Ghaith | Data Analyst</title>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Mohamed Salah — Full-Stack Engineer" />
-  <meta property="og:description" content="Building the future of digital experiences." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mohamedsalahabdelhamid.github.io/portfolio/" />
-
-  <!-- PWA -->
+  <!-- PWA & Theme -->
   <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#000000" />
+  <meta name="theme-color" content="#3D4347" />
 
-  <title>Mohamed Salah — Full-Stack Engineer & AI Innovator</title>
-
-  <!-- Fonts -->
+  <!-- Fonts: Using Publico Headline (fallback to Playfair/Georgia) and DM Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400&family=DM+Sans:opsz,wght@9..40,300..500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+
+  <!-- Lenis for Smooth Scrolling -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+  <!-- SplitType for Text Splitting -->
+  <script src="https://unpkg.com/split-type"></script>
 
   <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="dark" data-scroll="0">
 
-  <!-- ══ CURSOR ══ -->
-  <div class="cursor" id="cursor" aria-hidden="true">
-    <div class="cursor-dot"></div>
-    <div class="cursor-ring"></div>
-  </div>
-
-  <!-- ══ LOADER ══ -->
-  <div class="loader" id="loader" role="status" aria-live="polite">
-    <div class="loader-inner">
-      <div class="loader-logo">MS</div>
-      <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
-      <div class="loader-text" id="loaderText">Initializing...</div>
-    </div>
-  </div>
-
   <!-- ══ NAV ══ -->
-  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+  <nav class="nav" id="nav">
     <div class="nav-inner">
-      <a href="#hero" class="nav-logo" aria-label="Mohamed Salah — home">MS<span class="dot">.</span></a>
-      <ul class="nav-links" role="list">
-        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
-        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
-        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      <a href="#hero" class="nav-logo">MG<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Work</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
-      <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <span class="theme-icon sun" aria-hidden="true">☀</span>
-          <span class="theme-icon moon" aria-hidden="true">◑</span>
-        </button>
-        <a href="#contact" class="btn-hire" aria-label="Hire Mohamed">Hire Me</a>
+      <div class="nav-socials">
+        <a href="https://linkedin.com/in/mawnighaith" target="_blank" class="nav-social-link">LinkedIn</a>
+        <a href="https://github.com/Mo-Ghaith" target="_blank" class="nav-social-link">GitHub</a>
+        <a href="#contact" class="btn-hire">Let's talk!</a>
       </div>
-      <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="nav-mobile" id="navMobile" aria-hidden="true">
-      <a href="#about" class="nav-mobile-link">About</a>
-      <a href="#skills" class="nav-mobile-link">Skills</a>
-      <a href="#projects" class="nav-mobile-link">Projects</a>
-      <a href="#contact" class="nav-mobile-link">Contact</a>
     </div>
   </nav>
 
-  <!-- ══ PROGRESS BAR ══ -->
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <main id="smooth-wrapper">
+    <div id="smooth-content">
+      
+      <!-- ═══════════════════════════════════════
+           HERO
+      ═══════════════════════════════════════ -->
+      <section class="hero section" id="hero">
+        <div class="container hero-container">
+          <p class="hero-eyebrow split-text">Hi there! this is<br>Mohamed Awni Ghaith</p>
+          
+          <h1 class="hero-title">
+            <span class="hero-title-line">Design for data</span><br>
+            <span class="hero-title-line split-text">for</span>
+            <div class="slide-txt-wrap">
+              <span class="slide-txt-item slide-word">Python</span>
+              <span class="slide-txt-item slide-word">SQL</span>
+              <span class="slide-txt-item slide-word">Power BI</span>
+              <span class="slide-txt-item slide-word">Tableau</span>
+            </div>
+          </h1>
 
-  <!-- ══════════════════════════════════════
-       HERO
-  ═══════════════════════════════════════ -->
-  <section class="hero" id="hero" aria-label="Introduction">
-    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
-
-    <div class="hero-content">
-      <div class="hero-badge reveal-item">
-        <span class="badge-dot" aria-hidden="true"></span>
-        Available for freelance & full-time roles
-      </div>
-
-      <div class="hero-orb-wrap">
-        <div class="hero-orb" aria-hidden="true">
-          <div class="orb-ring orb-ring-1"></div>
-          <div class="orb-ring orb-ring-2"></div>
-          <div class="orb-ring orb-ring-3"></div>
-          <div class="orb-core">
-            <img src="https://i.pravatar.cc/200?img=11" alt="Mohamed Salah — portrait" class="orb-photo" loading="eager" width="140" height="140" />
-          </div>
-        </div>
-      </div>
-
-      <h1 class="hero-name reveal-item">
-        <span class="hero-name-line">Mohamed</span>
-        <span class="hero-name-line accent-text">Salah.</span>
-      </h1>
-
-      <p class="hero-tagline reveal-item">
-        <span class="typed-text" id="typedText"></span><span class="cursor-blink" aria-hidden="true">|</span>
-      </p>
-
-      <p class="hero-bio reveal-item">
-        Full-stack engineer & AI innovator crafting high-performance digital products
-        that sit at the intersection of elegant code and human experience.
-      </p>
-
-      <div class="hero-ctas reveal-item">
-        <a href="#projects" class="btn-primary" aria-label="View my projects">
-          <span>View Projects</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="cv.pdf" class="btn-secondary" download aria-label="Download CV">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8M4 7l4 4 4-4M2 12h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Download CV</span>
-        </a>
-      </div>
-
-      <div class="hero-socials reveal-item">
-        <a href="https://github.com/MohamedSalahAbdelhamid" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-        </a>
-        <a href="https://linkedin.com/in/mohamedsalah" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="mailto:m.salah@example.com" class="social-link" aria-label="Email">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <div class="hero-scroll-hint" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       STATS BAND
-  ═══════════════════════════════════════ -->
-  <section class="stats-band" aria-label="Career statistics">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item" data-count="5" data-suffix="+">
-          <span class="stat-number" aria-label="5 plus years">0</span>
-          <span class="stat-label">Years Experience</span>
-        </div>
-        <div class="stat-item" data-count="30" data-suffix="+">
-          <span class="stat-number" aria-label="30 plus projects">0</span>
-          <span class="stat-label">Projects Shipped</span>
-        </div>
-        <div class="stat-item" data-count="12" data-suffix="">
-          <span class="stat-number" aria-label="12 clients">0</span>
-          <span class="stat-label">Happy Clients</span>
-        </div>
-        <div class="stat-item" data-count="99" data-suffix="%">
-          <span class="stat-number" aria-label="99 percent">0</span>
-          <span class="stat-label">Uptime Record</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       ABOUT
-  ═══════════════════════════════════════ -->
-  <section class="about section" id="about" aria-label="About me">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">The Story</p>
-        <h2 class="section-title">About <em>Me</em></h2>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-visual">
-          <div class="about-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c?w=600&auto=format&fit=crop&q=80" alt="Mohamed working at a desk — side profile" class="about-photo" loading="lazy" width="480" height="580" />
-            <div class="about-photo-accent" aria-hidden="true"></div>
-          </div>
-          <div class="about-card-floating" aria-hidden="true">
-            <div class="float-card-icon">🚀</div>
-            <div>
-              <div class="float-card-val">Cairo, EG</div>
-              <div class="float-card-lab">Based in</div>
+          <div class="hero-bottom">
+            <div class="hero-desc-wrap">
+              <p class="hero-desc split-text">
+                I'm a data analyst specialized in turning raw data into actionable business insights. I work with Python, SQL, and data visualization tools to drive decisions.
+              </p>
+            </div>
+            <div class="hero-scrolldown">
+              <span class="scrolldown-label">Scroll to explore</span>
+              <div class="scrolldown-line"></div>
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="about-text">
-          <p class="about-lead">
-            I engineer products that <span class="highlight">people love using</span> — from pixel-perfect interfaces to scalable backend architectures and machine-learning pipelines.
+      <!-- ═══════════════════════════════════════
+           STATS & MOTIFS
+      ═══════════════════════════════════════ -->
+      <section class="stats section">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat">
+              <h3 class="stat-num">2+</h3>
+              <p class="stat-label">Years of<br>experience</p>
+            </div>
+            <div class="stat">
+              <h3 class="stat-num">10+</h3>
+              <p class="stat-label">Projects<br>delivered</p>
+            </div>
+            <div class="stat">
+              <h3 class="stat-num">6</h3>
+              <p class="stat-label">Professional<br>certifications</p>
+            </div>
+            <div class="stat">
+              <h3 class="stat-num">1</h3>
+              <p class="stat-label">Published<br>research</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+           EXPERTISE & SKILLS
+      ═══════════════════════════════════════ -->
+      <section class="expertise section" id="about">
+        <div class="container">
+          <div class="expertise-wrap">
+            <div class="expertise-left">
+              <h2 class="section-title split-text">What I do</h2>
+              <ul class="expertise-list">
+                <li class="expertise-item split-text">Data Analysis & Cleaning</li>
+                <li class="expertise-item split-text">Interactive Dashboards</li>
+                <li class="expertise-item split-text">Statistical Modeling</li>
+                <li class="expertise-item split-text">Process Optimization</li>
+              </ul>
+              <a href="mailto:m.awnighaith@yahoo.com" class="btn-primary mt-4">How can I help?</a>
+            </div>
+            <div class="expertise-right" id="skillsGrid">
+              <!-- Skills injected via JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+           PROJECTS
+      ═══════════════════════════════════════ -->
+      <section class="projects section" id="projects">
+        <div class="container">
+          <h2 class="section-title split-text mb-8">Projects I worked on</h2>
+          <div class="projects-list" id="projectsGrid">
+            <!-- Projects injected via JS -->
+          </div>
+            <div class="projects-view-all mt-8">
+                <a href="https://github.com/Mo-Ghaith" class="btn-secondary" target="_blank">All projects on GitHub</a>
+            </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+           ABOUT THE STORY
+      ═══════════════════════════════════════ -->
+      <section class="story section">
+        <div class="container">
+          <div class="story-grid">
+            <div class="story-img-wrap parallax-img">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80" alt="Workspace" class="story-img scale-img" />
+            </div>
+            <div class="story-content">
+              <h2 class="section-title split-text mb-4">About me</h2>
+              <p class="story-text split-text">
+                As a Data Analyst with a strong engineering foundation, I specialize in data cleaning, analysis, and visualization. I have hands-on experience transforming complex datasets into clear insights and communicating findings to stakeholders.
+              </p>
+              <p class="story-text split-text">
+                Based in Cairo, Egypt. Co-founder of FruPix, a food-tech startup where I apply data-driven quality control. Holding a BSc in Metallurgical Engineering and a Google Data Analytics Certificate.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+           CONTACT
+      ═══════════════════════════════════════ -->
+      <section class="contact section" id="contact">
+        <div class="container contact-container">
+          <h2 class="contact-title split-text">Got a project in mind?<br>Let's make something happen together</h2>
+          <p class="contact-desc split-text">
+            As a data analyst, I believe in uncovering the truth within numbers. It’s dedicating yourself to finding the right balance between data and business goals.
           </p>
-          <p class="about-body">
-            With over 5 years in the field, I've shipped production systems serving millions of users at companies ranging from ambitious startups to established enterprises. My toolkit spans React, Node.js, Python, and cloud infrastructure — but my real obsession is the space where <em>performance meets beauty</em>.
-          </p>
-          <p class="about-body">
-            I hold a Computer Science degree from Cairo University and continuously sharpen my skills in AI/ML, contributing to open-source projects and writing about engineering craft.
-          </p>
-
-          <div class="about-timeline">
-            <div class="timeline-item">
-              <div class="timeline-dot" aria-hidden="true"></div>
-              <div class="timeline-body">
-                <span class="timeline-year">2024 – Now</span>
-                <strong>Senior Full-Stack Engineer</strong> — TechCorp Global
-              </div>
+          <a href="mailto:m.awnighaith@yahoo.com" class="contact-email">m.awnighaith@yahoo.com</a>
+          <div class="contact-bottom">
+            <div class="contact-links">
+              <a href="Resume.pdf" target="_blank" class="contact-bottom-link">Resume</a>
+              <a href="Profile.pdf" target="_blank" class="contact-bottom-link">Profile</a>
             </div>
-            <div class="timeline-item">
-              <div class="timeline-dot" aria-hidden="true"></div>
-              <div class="timeline-body">
-                <span class="timeline-year">2022 – 2024</span>
-                <strong>Frontend Lead</strong> — StartupX Cairo
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot" aria-hidden="true"></div>
-              <div class="timeline-body">
-                <span class="timeline-year">2020 – 2022</span>
-                <strong>Junior Developer</strong> — Freelance & Agency
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot" aria-hidden="true"></div>
-              <div class="timeline-body">
-                <span class="timeline-year">2016 – 2020</span>
-                <strong>BSc Computer Science</strong> — Cairo University
-              </div>
+            <div class="contact-links">
+              <a href="https://linkedin.com/in/mawnighaith" target="_blank" class="contact-bottom-link">LinkedIn</a>
+              <a href="https://github.com/Mo-Ghaith" target="_blank" class="contact-bottom-link">GitHub</a>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       SKILLS
-  ═══════════════════════════════════════ -->
-  <section class="skills section" id="skills" aria-label="Technical skills">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">Expertise</p>
-        <h2 class="section-title">Skills & <em>Tools</em></h2>
-      </div>
-
-      <div class="skills-categories">
-        <button class="skill-cat-btn active" data-cat="all" aria-pressed="true">All</button>
-        <button class="skill-cat-btn" data-cat="frontend" aria-pressed="false">Frontend</button>
-        <button class="skill-cat-btn" data-cat="backend" aria-pressed="false">Backend</button>
-        <button class="skill-cat-btn" data-cat="aiml" aria-pressed="false">AI / ML</button>
-        <button class="skill-cat-btn" data-cat="tools" aria-pressed="false">DevOps & Tools</button>
-      </div>
-
-      <div class="skills-grid" id="skillsGrid" role="list">
-        <!-- generated by JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       PROJECTS
-  ═══════════════════════════════════════ -->
-  <section class="projects section" id="projects" aria-label="Portfolio projects">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">Work</p>
-        <h2 class="section-title">Selected <em>Projects</em></h2>
-      </div>
-
-      <div class="project-filters" role="tablist" aria-label="Project filter">
-        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web</button>
-        <button class="filter-btn" data-filter="ai" role="tab" aria-selected="false">AI</button>
-        <button class="filter-btn" data-filter="mobile" role="tab" aria-selected="false">Mobile</button>
-      </div>
-
-      <div class="projects-grid" id="projectsGrid" role="list">
-        <!-- generated by JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ PROJECT MODAL ══ -->
-  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
-    <div class="modal">
-      <button class="modal-close" id="modalClose" aria-label="Close project details">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </button>
-      <div class="modal-content" id="modalContent"></div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════
-       CONTACT
-  ═══════════════════════════════════════ -->
-  <section class="contact section" id="contact" aria-label="Contact me">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">Let's Talk</p>
-        <h2 class="section-title">Get in <em>Touch</em></h2>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info">
-          <p class="contact-intro">
-            Whether you have a project in mind, a role to fill, or just want to connect — I'm always open to interesting conversations.
-          </p>
-          <div class="contact-details">
-            <a href="mailto:m.salah@example.com" class="contact-detail-item" aria-label="Send email">
-              <div class="cd-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div>
-                <span class="cd-label">Email</span>
-                <span class="cd-val">m.salah@example.com</span>
-              </div>
-            </a>
-            <div class="contact-detail-item">
-              <div class="cd-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div>
-                <span class="cd-label">Location</span>
-                <span class="cd-val">Cairo, Egypt 🇪🇬</span>
-              </div>
-            </div>
-            <div class="contact-detail-item">
-              <div class="cd-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <div>
-                <span class="cd-label">Availability</span>
-                <span class="cd-val">Open to opportunities</span>
-              </div>
-            </div>
+      </section>
+      
+      <footer class="footer section">
+          <div class="container footer-container">
+              <p class="footer-copy">© <span id="year"></span> Mohamed Awni Ghaith.</p>
+              <p class="footer-built">Inspired by Valentin Cheval</p>
           </div>
-        </div>
+      </footer>
 
-        <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
-          <div class="form-group">
-            <label for="formName" class="form-label">Full Name</label>
-            <input type="text" id="formName" name="name" class="form-input" placeholder="Jane Smith" autocomplete="name" required aria-required="true" />
-            <span class="form-error" role="alert" aria-live="polite"></span>
-          </div>
-          <div class="form-group">
-            <label for="formEmail" class="form-label">Email Address</label>
-            <input type="email" id="formEmail" name="email" class="form-input" placeholder="jane@example.com" autocomplete="email" required aria-required="true" />
-            <span class="form-error" role="alert" aria-live="polite"></span>
-          </div>
-          <div class="form-group">
-            <label for="formMsg" class="form-label">Message</label>
-            <textarea id="formMsg" name="message" class="form-input form-textarea" placeholder="Tell me about your project..." rows="5" required aria-required="true"></textarea>
-            <span class="form-error" role="alert" aria-live="polite"></span>
-          </div>
-          <button type="submit" class="btn-primary btn-full" id="formSubmit">
-            <span class="btn-text">Send Message</span>
-            <span class="btn-loading" aria-hidden="true" hidden>
-              <svg class="spin" width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="7" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="22 22" stroke-linecap="round"/></svg>
-            </span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-
-          <div class="form-success" id="formSuccess" hidden role="status" aria-live="polite">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="var(--accent)" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Message sent! I'll respond within 24 hours.</span>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ FOOTER ══ -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <a href="#hero" class="nav-logo" aria-label="Back to top">MS<span class="dot">.</span></a>
-          <p>Building the future, one commit at a time.</p>
-        </div>
-        <div class="footer-links">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="footer-socials">
-          <a href="https://github.com/MohamedSalahAbdelhamid" aria-label="GitHub" target="_blank" rel="noopener">GH</a>
-          <a href="https://linkedin.com/in/mohamedsalah" aria-label="LinkedIn" target="_blank" rel="noopener">LI</a>
-          <a href="https://twitter.com/mohamedsalah" aria-label="Twitter" target="_blank" rel="noopener">TW</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© <span id="year"></span> Mohamed Salah Abdel Hamid. Crafted with precision.</p>
-        <p class="footer-built">Built with HTML · CSS · JS</p>
-      </div>
-    </div>
-  </footer>
+    </div> <!-- smooth-content -->
+  </main> <!-- smooth-wrapper -->
 
   <script src="script.js" defer></script>
 </body>
