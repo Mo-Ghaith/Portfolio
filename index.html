@@ -1,216 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mohamed Awni Ghaith — Data Analyst skilled in Python, SQL, Power BI & Tableau." />
-  <title>Mohamed Awni Ghaith | Data Analyst</title>
+  <meta name="description" content="Mohamed Awni Ghaith — Independent Data Analyst & Business Strategist." />
+  <title>Mohamed Awni Ghaith | Independent Data Analyst</title>
 
-  <!-- PWA & Theme -->
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#3D4347" />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- Fonts: Using Publico Headline (fallback to Playfair/Georgia) and DM Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400&family=DM+Sans:opsz,wght@9..40,300..500&family=DM+Mono:wght@300;400&display=swap"
-    rel="stylesheet" />
-
-  <!-- Lenis for Smooth Scrolling -->
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-
-  <!-- SplitType for Text Splitting -->
   <script src="https://unpkg.com/split-type"></script>
-
-  <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <link rel="stylesheet" href="style.css" />
 </head>
+<body class="loading">
 
-<body class="dark" data-scroll="0">
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-counter">0%</div>
+  </div>
 
-  <!-- ══ NAV ══ -->
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo">MG<span class="dot">.</span></a>
-      <ul class="nav-links">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#projects" class="nav-link">Work</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-      <div class="nav-socials">
-        <a href="https://linkedin.com/in/mawnighaith" target="_blank" class="nav-social-link">LinkedIn</a>
-        <a href="https://github.com/Mo-Ghaith" target="_blank" class="nav-social-link">GitHub</a>
-        <a href="#contact" class="btn-hire">Let's talk!</a>
-      </div>
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo hover-target"><a href="#">MG.</a></div>
+    <div class="availability">
+      <div class="status-dot"></div>
+      Available for freelance work
     </div>
-  </nav>
+  </header>
 
   <main id="smooth-wrapper">
     <div id="smooth-content">
 
-      <!-- ═══════════════════════════════════════
-           HERO
-      ═══════════════════════════════════════ -->
+      <!-- Hero -->
       <section class="hero section" id="hero">
-        <div class="container hero-container">
-          <p class="hero-eyebrow split-text">Hi there! this is<br>Mohamed Awni Ghaith</p>
-
-          <h1 class="hero-title">
-            <span class="hero-title-line">Design for data</span><br>
-            <span class="hero-title-line split-text">for</span>
-            <div class="slide-txt-wrap">
-              <span class="slide-txt-item slide-word">Python</span>
-              <span class="slide-txt-item slide-word">SQL</span>
-              <span class="slide-txt-item slide-word">Power BI</span>
-              <span class="slide-txt-item slide-word">Tableau</span>
+        <div class="hero-container">
+          <div class="hero-line hero-line-1">
+            <h1>INDEPENDENT</h1>
+          </div>
+          <div class="hero-line hero-line-2">
+            <div class="hero-img-wrap">
+              <img src="hero-bg.jpg" alt="Mohamed Awni Ghaith" />
             </div>
-          </h1>
-
-          <div class="hero-bottom">
-            <div class="hero-desc-wrap">
-              <p class="hero-desc split-text">
-                I'm a data analyst specialized in turning raw data into actionable business insights. I work with
-                Python, SQL, and data visualization tools to drive decisions.
-              </p>
-            </div>
-            <div class="hero-scrolldown">
-              <span class="scrolldown-label">Scroll to explore</span>
-              <div class="scrolldown-line"></div>
-            </div>
+            <h1>DATA ANALYST</h1>
+          </div>
+          <div class="hero-line hero-line-3">
+            <h1 class="outline-text">& BUSINESS STRATEGIST</h1>
+          </div>
+        </div>
+        <div class="hero-bottom container">
+          <p class="hero-location">Based in Cairo, Egypt. Specializing in turning raw data into actionable insights.</p>
+          <div class="scroll-indicator">
+            <p>SCROLL</p>
+            <div class="line"></div>
           </div>
         </div>
       </section>
 
-      <!-- ═══════════════════════════════════════
-           STATS & MOTIFS
-      ═══════════════════════════════════════ -->
-      <section class="stats section">
+      <!-- About -->
+      <section class="about section" id="about">
         <div class="container">
-          <div class="stats-grid">
-            <div class="stat">
-              <h3 class="stat-num">2+</h3>
-              <p class="stat-label">Years of<br>experience</p>
-            </div>
-            <div class="stat">
-              <h3 class="stat-num">10+</h3>
-              <p class="stat-label">Projects<br>delivered</p>
-            </div>
-            <div class="stat">
-              <h3 class="stat-num">6</h3>
-              <p class="stat-label">Professional<br>certifications</p>
-            </div>
-            <div class="stat">
-              <h3 class="stat-num">1</h3>
-              <p class="stat-label">Published<br>research</p>
-            </div>
-          </div>
+          <p class="section-label">01 // ABOUT ME</p>
+          <h2 class="about-text split-text">
+            I am a Data Analyst with a strong engineering foundation, specializing in data cleaning, analysis, and visualization. I believe in uncovering the truth within numbers and dedicating myself to finding the perfect balance between data accuracy and business goals.
+          </h2>
         </div>
       </section>
 
-      <!-- ═══════════════════════════════════════
-           EXPERTISE & SKILLS
-      ═══════════════════════════════════════ -->
-      <section class="expertise section" id="about">
+      <!-- Services -->
+      <section class="services section">
         <div class="container">
-          <div class="expertise-wrap">
-            <div class="expertise-left">
-              <h2 class="section-title split-text">What I do</h2>
-              <ul class="expertise-list">
-                <li class="expertise-item split-text">Data Analysis & Cleaning</li>
-                <li class="expertise-item split-text">Interactive Dashboards</li>
-                <li class="expertise-item split-text">Statistical Modeling</li>
-                <li class="expertise-item split-text">Process Optimization</li>
-              </ul>
-              <a href="mailto:m.awnighaith@yahoo.com" class="btn-primary mt-4">How can I help?</a>
+          <p class="section-label">02 // EXPERTISE</p>
+          <div class="services-wrapper">
+            <div class="service-item hover-target">
+              <div class="service-name">Data Analysis & Cleaning</div>
+              <div class="service-tag">Python / SQL</div>
             </div>
-            <div class="expertise-right" id="skillsGrid">
-              <!-- Skills injected via JS -->
+            <div class="service-item hover-target">
+              <div class="service-name">Interactive Dashboards</div>
+              <div class="service-tag">Power BI / Tableau</div>
+            </div>
+            <div class="service-item hover-target">
+              <div class="service-name">Statistical Modeling</div>
+              <div class="service-tag">Research & EDA</div>
+            </div>
+            <div class="service-item hover-target">
+              <div class="service-name">Process Optimization</div>
+              <div class="service-tag">Business Strategy</div>
+            </div>
+          </div>
+          <div class="stats-banner mt-8">
+            <div class="stat-banner-item">
+              <h3>2+</h3><p>Years Experience</p>
+            </div>
+            <div class="stat-banner-item">
+              <h3>10+</h3><p>Projects Delivered</p>
+            </div>
+            <div class="stat-banner-item">
+              <h3>6</h3><p>Certifications</p>
+            </div>
+            <div class="stat-banner-item">
+              <h3>1</h3><p>Published Research</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ═══════════════════════════════════════
-           PROJECTS
-      ═══════════════════════════════════════ -->
-      <section class="projects section" id="projects">
+      <!-- Projects -->
+      <section class="work section" id="work">
         <div class="container">
-          <h2 class="section-title split-text mb-8">Projects I worked on</h2>
-          <div class="projects-list" id="projectsGrid">
-            <!-- Projects injected via JS -->
-          </div>
-          <div class="projects-view-all mt-8">
-            <a href="https://github.com/Mo-Ghaith" class="btn-secondary" target="_blank">All projects on GitHub</a>
+          <p class="section-label">03 // SELECTED WORKS</p>
+          <div class="projects-wrapper" id="projectsGrid">
+            <!-- Injected via JS -->
           </div>
         </div>
       </section>
 
-      <!-- ═══════════════════════════════════════
-           ABOUT THE STORY
-      ═══════════════════════════════════════ -->
-      <section class="story section">
-        <div class="container">
-          <div class="story-grid">
-            <div class="story-img-wrap parallax-img">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80"
-                alt="Workspace" class="story-img scale-img" />
-            </div>
-            <div class="story-content">
-              <h2 class="section-title split-text mb-4">About me</h2>
-              <p class="story-text split-text">
-                As a Data Analyst with a strong engineering foundation, I specialize in data cleaning, analysis, and
-                visualization. I have hands-on experience transforming complex datasets into clear insights and
-                communicating findings to stakeholders.
-              </p>
-              <p class="story-text split-text">
-                Based in Cairo, Egypt. Co-founder of FruPix, a food-tech startup where I apply data-driven quality
-                control. Holding a BSc in Metallurgical Engineering and a Google Data Analytics Certificate.
-              </p>
-            </div>
-          </div>
+      <!-- Moving Marquee -->
+      <section class="marquee section">
+        <div class="marquee-inner">
+          <span class="outline-text">PYTHON • SQL • POWER BI • TABLEAU • EDA • </span>
+          <span class="outline-text">PYTHON • SQL • POWER BI • TABLEAU • EDA • </span>
+          <span class="outline-text">PYTHON • SQL • POWER BI • TABLEAU • EDA • </span>
         </div>
       </section>
 
-      <!-- ═══════════════════════════════════════
-           CONTACT
-      ═══════════════════════════════════════ -->
+      <!-- Contact -->
       <section class="contact section" id="contact">
-        <div class="container contact-container">
-          <h2 class="contact-title split-text">Got a project in mind?<br>Let's make something happen together</h2>
-          <p class="contact-desc split-text">
-            As a data analyst, I believe in uncovering the truth within numbers. It’s dedicating yourself to finding the
-            right balance between data and business goals.
-          </p>
-          <a href="mailto:m.awnighaith@yahoo.com" class="contact-email">m.awnighaith@yahoo.com</a>
-          <div class="contact-bottom">
-            <div class="contact-links">
-              <a href="Resume.pdf" target="_blank" class="contact-bottom-link">Resume</a>
-              <a href="Profile.pdf" target="_blank" class="contact-bottom-link">Profile</a>
+        <div class="container">
+          <a href="mailto:m.awnighaith@yahoo.com" class="contact-huge hover-target">LET'S TALK</a>
+          
+          <div class="footer">
+            <div class="footer-left">
+              <p>© <span id="year"></span> Mohamed Awni Ghaith</p>
             </div>
-            <div class="contact-links">
-              <a href="https://linkedin.com/in/mawnighaith" target="_blank" class="contact-bottom-link">LinkedIn</a>
-              <a href="https://github.com/Mo-Ghaith" target="_blank" class="contact-bottom-link">GitHub</a>
+            <div class="footer-right">
+              <a href="Resume.pdf" class="hover-target" target="_blank">Resume</a>
+              <a href="Profile.pdf" class="hover-target" target="_blank">Profile</a>
+              <a href="https://linkedin.com/in/mawnighaith" class="hover-target" target="_blank">LinkedIn</a>
+              <a href="https://github.com/Mo-Ghaith" class="hover-target" target="_blank">GitHub</a>
             </div>
           </div>
         </div>
       </section>
 
-      <footer class="footer section">
-        <div class="container footer-container">
-          <p class="footer-copy">© <span id="year"></span> Mohamed Awni Ghaith.</p>
-          <p class="footer-built">Inspired by Valentin Cheval</p>
-        </div>
-      </footer>
+    </div>
+  </main>
 
-    </div> <!-- smooth-content -->
-  </main> <!-- smooth-wrapper -->
+  <img class="project-hover-img" src="" alt="Project Hover" />
 
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
-
 </html>
