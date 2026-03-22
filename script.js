@@ -59,7 +59,7 @@ const DATA = {
 
 /* ══ UTILITIES ═══════════════════════════════════════════════════ */
 
-const qs  = (s, ctx = document) => ctx.querySelector(s);
+const qs = (s, ctx = document) => ctx.querySelector(s);
 const qsa = (s, ctx = document) => [...ctx.querySelectorAll(s)];
 
 /* ══ RENDER DATA ═════════════════════════════════════════════════ */
@@ -118,12 +118,12 @@ function initSmoothScroll() {
   gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
   });
-  
+
   gsap.ticker.lagSmoothing(0);
 
   // Set current year in footer
   const yearEl = qs('#year');
-  if(yearEl) yearEl.textContent = new Date().getFullYear();
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 }
 
 /* ══ GSAP ANIMATIONS ══════════════════════════════════════════════ */
@@ -133,11 +133,11 @@ function initAnimations() {
 
   // 1. SplitText using SplitType (free alternative to GSAP SplitText)
   const splitElements = qsa('.split-text');
-  
+
   splitElements.forEach(el => {
     // We run SplitType on it
     const text = new SplitType(el, { types: 'lines, words, chars' });
-    
+
     // Animate lines or words up mask
     gsap.from(text.words, {
       scrollTrigger: {
@@ -157,13 +157,13 @@ function initAnimations() {
   // 2. 3D Rotating Text in Hero (like Valentin Cheval)
   const slideWords = qsa('.slide-word');
   const slideWrap = qs('.slide-txt-wrap');
-  
+
   if (slideWords.length > 0 && slideWrap) {
     let tl = gsap.timeline({ repeat: -1 });
-    
+
     // Set initial states
     gsap.set(slideWords, { rotationX: -90, opacity: 0 });
-    
+
     // Sequence
     slideWords.forEach((word, i) => {
       tl.to(word, {
@@ -172,13 +172,13 @@ function initAnimations() {
         duration: 0.8,
         ease: 'power3.out'
       })
-      .to(word, {
-        rotationX: 90,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.in',
-        delay: 1.5 // time it stays on screen
-      });
+        .to(word, {
+          rotationX: 90,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.in',
+          delay: 1.5 // time it stays on screen
+        });
     });
   }
 
@@ -201,18 +201,18 @@ function initAnimations() {
 
   // 4. Project Reveal Batch Animation
   const projects = qsa('.project-card');
-  if(projects.length > 0) {
-      gsap.from(projects, {
-          scrollTrigger: {
-              trigger: '.projects-list',
-              start: 'top 85%'
-          },
-          y: 100,
-          opacity: 0,
-          duration: 1.2,
-          stagger: 0.2,
-          ease: 'power3.out'
-      });
+  if (projects.length > 0) {
+    gsap.from(projects, {
+      scrollTrigger: {
+        trigger: '.projects-list',
+        start: 'top 85%'
+      },
+      y: 100,
+      opacity: 0,
+      duration: 1.2,
+      stagger: 0.2,
+      ease: 'power3.out'
+    });
   }
 }
 
@@ -220,7 +220,7 @@ function initAnimations() {
 
 document.addEventListener('DOMContentLoaded', () => {
   renderData();
-  
+
   // Need to wait slightly for SplitType and DOM to settle
   setTimeout(() => {
     initSmoothScroll();
