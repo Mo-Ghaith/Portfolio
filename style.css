@@ -114,6 +114,7 @@ a {
   text-decoration: none;
   cursor: pointer;
   display: inline-block;
+  touch-action: manipulation;
 }
 
 ul,
@@ -136,6 +137,50 @@ button {
   color: inherit;
   font-family: inherit;
   cursor: pointer;
+  touch-action: manipulation;
+}
+
+/* Keep the whole visible control clickable, not just its text/icon child. */
+.header-nav a,
+.txt-link,
+.contact-huge,
+.contact-link-btn,
+.project-header,
+.project-link-btn,
+.frupix-carousel-nav,
+.cert-nav,
+.cert-modal-close,
+.hire-btn,
+.hire-link,
+.fab-trigger,
+.fab-menu a {
+  position: relative;
+  pointer-events: auto;
+}
+
+.header-nav a *,
+.txt-link *,
+.contact-huge *,
+.contact-link-btn > img,
+.contact-link-btn > svg,
+.contact-link-btn svg *,
+.project-header > *,
+.project-link-btn > svg,
+.project-link-btn svg *,
+.frupix-carousel-nav > svg,
+.frupix-carousel-nav svg *,
+.cert-nav > svg,
+.cert-nav svg *,
+.cert-modal-close > svg,
+.cert-modal-close svg *,
+.hire-btn *,
+.hire-link > svg,
+.hire-link svg *,
+.fab-trigger > svg,
+.fab-trigger svg *,
+.fab-menu a > svg,
+.fab-menu a svg * {
+  pointer-events: none;
 }
 
 /* ===== LAYOUT ===== */
@@ -873,6 +918,8 @@ h5 {
 }
 
 .project-header {
+  position: relative;
+  z-index: 2;
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -967,6 +1014,8 @@ h5 {
 
 /* Expandable Detail */
 .project-detail {
+  position: relative;
+  z-index: 1;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.6s cubic-bezier(0.65, 0, 0.35, 1);
@@ -1036,6 +1085,7 @@ h5 {
   background: rgba(0,0,0,0.2);
   border: 1px solid rgba(255,255,255,0.1);
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  pointer-events: none;
 }
 
 .placeholder-text {
@@ -1780,6 +1830,7 @@ h5 {
   transform-origin: left;
   transform: rotateY(90deg);
   border-radius: 0 8px 8px 0;
+  pointer-events: none;
 }
 
 .cert-card::after {
@@ -1793,6 +1844,7 @@ h5 {
   transform-origin: top;
   transform: rotateX(-90deg);
   border-radius: 0 0 8px 8px;
+  pointer-events: none;
 }
 
 .cert-card.active {
@@ -2024,6 +2076,12 @@ h5 {
   opacity: 1;
 }
 
+.cert-modal:not(.active) *,
+.cert-modal:not(.active)::before,
+.cert-modal:not(.active)::after {
+  pointer-events: none !important;
+}
+
 .cert-modal-bg {
   position: absolute;
   inset: 0;
@@ -2067,7 +2125,7 @@ h5 {
   max-width: 100%;
   height: 100%;
   object-fit: contain;
-  pointer-events: auto;
+  pointer-events: none;
 }
 
 .cert-modal-actions {
@@ -2509,6 +2567,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
   .fab-menu {
     position: absolute;
+    z-index: 3;
     bottom: 70px;
     right: 0;
     display: flex;
@@ -2534,9 +2593,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     opacity: 1;
     visibility: visible;
     transform: translateY(0) scale(1);
+    pointer-events: auto;
   }
 
   .fab-menu a {
+    position: relative;
+    z-index: 1;
     display: block;
     padding: 0.8rem 1.2rem;
     font-family: 'Belleza', sans-serif;
