@@ -63,7 +63,10 @@ const DATA = {
       github: '',
       demo: '',
       description: 'Designed interactive Power BI dashboards for a retail sales dataset. Performed data cleaning in Excel, built star-schema data models with DAX measures, and created visualizations revealing sales trends, regional performance, and product category insights.',
-      screenshot: 'image334.png'
+      screenshot: 'assets/projects/salesstore/1_executive_summary_img_1.png',
+      extraScreenshots: [
+        'assets/projects/salesstore/2_product_deepdive_img_1.png'
+      ]
     }
   ],
   roadmap: [
@@ -144,23 +147,135 @@ const CERT_OVERRIDES = {
   'Coursera 6XPZGPMPUU46.png': {
     title: 'Delivering Quality Work with Agility',
     source: 'Coursera / IBM',
-    date: 'Jan 16, 2024',
-    summary: 'Professional course focused on agile delivery practices and team execution.',
+    date: 'Jan 10, 2026',
+    summary: 'Professional course on agile delivery practices and quality-focused team execution.',
     summary2: 'Built practical habits for shipping analytics work faster with quality controls.'
   },
   'Coursera JBVQ4KB33A67.png': {
     title: 'Google Data Analytics Professional Certificate',
     source: 'Coursera / Google',
     date: 'Sep 14, 2022',
-    summary: 'Covered data cleaning, analysis, and visualization across real business scenarios.',
-    summary2: 'Reinforced SQL, spreadsheets, and dashboards for end-to-end analytics delivery.'
+    summary: 'Comprehensive 8-course professional certificate covering the full data analytics lifecycle.',
+    summary2: 'Mastered spreadsheets, SQL, Tableau, and R for end-to-end analytics delivery.'
   },
-  'certificate (1).png': {
+  'certificate.png': {
     title: 'Introduction to Python',
     source: 'DataCamp',
-    date: 'Jul 5, 2023',
-    summary: 'Foundational Python certificate for analytics and data workflow automation.',
-    summary2: 'Focused on core syntax, data structures, and practical problem solving.'
+    date: 'Jan 05, 2023',
+    summary: 'Foundational Python programming for data analysis and workflow automation.',
+    summary2: 'Covered core syntax, data structures, and practical problem-solving techniques.'
+  },
+  'certificate (1).png': {
+    title: 'Intermediate Python',
+    source: 'DataCamp',
+    date: 'Jan 18, 2023',
+    summary: 'Advanced Python techniques including Matplotlib visualization and dictionary manipulation.',
+    summary2: 'Built proficiency in loops, logic, and pandas DataFrame operations.'
+  },
+  'certificate (2).png': {
+    title: 'Understanding Artificial Intelligence',
+    source: 'DataCamp',
+    date: 'Sep 09, 2023',
+    summary: 'Comprehensive overview of AI concepts, applications, and ethical considerations.',
+    summary2: 'Explored machine learning, deep learning, and NLP fundamentals for business contexts.'
+  },
+  'certificate (3).png': {
+    title: 'Understanding Data Science',
+    source: 'DataCamp',
+    date: 'Mar 29, 2023',
+    summary: 'End-to-end data science workflow from data collection to model deployment.',
+    summary2: 'Covered data engineering, experimentation, and machine learning pipeline design.'
+  },
+  'certificate (4).png': {
+    title: 'Understanding Cloud Computing',
+    source: 'DataCamp',
+    date: 'Apr 08, 2023',
+    summary: 'Cloud infrastructure concepts including AWS, Azure, and GCP service models.',
+    summary2: 'Learned cloud deployment strategies for scalable data analytics workloads.'
+  },
+  'certificate (5).png': {
+    title: 'Data Manipulation with pandas',
+    source: 'DataCamp',
+    date: 'Feb 06, 2023',
+    summary: 'Advanced pandas operations: sorting, filtering, grouping, and pivot table creation.',
+    summary2: 'Practiced real-world data wrangling patterns used in professional analytics workflows.'
+  },
+  'certificate (6).png': {
+    title: 'Understanding Data Engineering',
+    source: 'DataCamp',
+    date: 'Apr 07, 2023',
+    summary: 'Data engineering fundamentals: ETL pipelines, data warehousing, and orchestration.',
+    summary2: 'Explored tools and architectures for building robust data infrastructure.'
+  },
+  'certificate (7).png': {
+    title: 'Understanding Machine Learning',
+    source: 'DataCamp',
+    date: 'Apr 02, 2023',
+    summary: 'Core ML concepts: supervised and unsupervised learning, model evaluation, and feature engineering.',
+    summary2: 'Built intuition for selecting and applying ML algorithms to business problems.'
+  },
+  'certificate (8).png': {
+    title: 'Understanding Data Visualization',
+    source: 'DataCamp',
+    date: 'Apr 06, 2023',
+    summary: 'Data visualization principles and best practices for effective storytelling.',
+    summary2: 'Covered chart selection, color theory, and dashboard design for business audiences.'
+  },
+  'certificate (9).png': {
+    title: 'Introduction to Statistics in Python',
+    source: 'DataCamp',
+    date: 'Mar 05, 2023',
+    summary: 'Statistical foundations: probability distributions, hypothesis testing, and correlation analysis.',
+    summary2: 'Applied statistical methods to real datasets using Python and NumPy.'
+  },
+  'certificate (10).png': {
+    title: 'Joining Data with pandas',
+    source: 'DataCamp',
+    date: 'Feb 16, 2023',
+    summary: 'Advanced DataFrame merging: inner/outer joins, concatenation, and multi-table operations.',
+    summary2: 'Mastered techniques for combining complex datasets in analytical workflows.'
+  },
+  'certificate (11).png': {
+    title: 'Introduction to Data Visualization with Seaborn',
+    source: 'DataCamp',
+    date: 'Aug 20, 2023',
+    summary: 'Statistical visualization with Seaborn: distribution plots, regression plots, and categorical plots.',
+    summary2: 'Created publication-quality visualizations for exploratory data analysis.'
+  },
+  'certificate (12).png': {
+    title: 'Introduction to Data Visualization with Matplotlib',
+    source: 'DataCamp',
+    date: 'Jul 22, 2023',
+    summary: 'Core Matplotlib skills: subplots, annotations, styling, and multi-panel figure creation.',
+    summary2: 'Built customized, professional-grade charts for analytical reporting.'
+  },
+  'certificate (13).png': {
+    title: 'Data Communication Concepts',
+    source: 'DataCamp',
+    date: 'Apr 14, 2023',
+    summary: 'Effective data storytelling: audience analysis, narrative structure, and presentation design.',
+    summary2: 'Learned to translate technical findings into clear, actionable business recommendations.'
+  },
+  'certificate (14).png': {
+    title: 'Introduction to Python for Finance',
+    source: 'DataCamp',
+    date: 'Jun 29, 2024',
+    summary: 'Financial data analysis with Python: stock returns, portfolio metrics, and risk assessment.',
+    summary2: 'Applied NumPy and Matplotlib to real market data for investment analytics.'
+  },
+  'certificate (15).png': {
+    title: 'Introduction to NumPy',
+    source: 'DataCamp',
+    date: 'Mar 14, 2023',
+    summary: 'NumPy array operations: broadcasting, vectorization, and mathematical computations.',
+    summary2: 'Built efficient numerical computing skills essential for ML and data analysis.'
+  },
+  'certificate (16).png': {
+    title: 'Introduction to SQL Server',
+    source: 'DataCamp',
+    date: 'May 18, 2025',
+    summary: 'SQL Server fundamentals: querying, filtering, aggregating, and joining relational data.',
+    summary2: 'Practiced T-SQL patterns used in enterprise database environments.'
   }
 };
 
@@ -237,23 +352,20 @@ window.rotateCertificates = direction => {
   certLandscape.dataset.activeIndex = String(next);
 
   const isMobile = window.innerWidth < 769;
-  const radiusX = isMobile ? 230 : 390;
-  const radiusZ = isMobile ? 170 : 295;
-  const step = (Math.PI * 2) / cards.length;
-
   cards.forEach((card, index) => {
     let logicalOffset = index - next;
     if (logicalOffset > cards.length / 2) logicalOffset -= cards.length;
     if (logicalOffset < -cards.length / 2) logicalOffset += cards.length;
 
-    const angle = logicalOffset * step;
-    const x = Math.sin(angle) * radiusX;
-    const z = Math.cos(angle) * radiusZ;
-    const depth = (z + radiusZ) / (2 * radiusZ);
-    const scale = 0.62 + (depth * 0.38);
-    const opacity = 0.14 + (depth * 0.86);
-    const yRotation = -Math.sin(angle) * 56;
-    const visible = depth > 0.2 || Math.abs(logicalOffset) <= 1;
+    const distance = Math.abs(logicalOffset);
+    const visible = distance <= 2;
+    const xStep = isMobile ? 330 : 520;
+    const zStep = isMobile ? 180 : 230;
+    const x = logicalOffset * xStep;
+    const z = -distance * zStep;
+    const scale = distance === 0 ? 1 : distance === 1 ? 0.72 : 0.58;
+    const opacity = distance === 0 ? 1 : distance === 1 ? 0.46 : 0.14;
+    const yRotation = logicalOffset * (isMobile ? -14 : -18);
 
     card.dataset.offset = String(logicalOffset);
     card.classList.toggle('active', logicalOffset === 0);
@@ -293,6 +405,48 @@ window.updateCertificateMeta = activeIndex => {
     : '<span class="roadmap-domain">Verification link unavailable</span>';
 };
 
+window.rotateFrupixCarousel = direction => {
+  const stage = document.getElementById('frupix-carousel-stage');
+  const dotsWrap = document.getElementById('frupix-carousel-dots');
+  if (!stage) return;
+
+  const slides = Array.from(stage.querySelectorAll('.frupix-slide'));
+  if (!slides.length) return;
+
+  const current = Number(stage.dataset.activeIndex || 0);
+  const next = (current + direction + slides.length) % slides.length;
+  stage.dataset.activeIndex = String(next);
+
+  const isMobile = window.innerWidth < 769;
+  const yStep = isMobile ? 135 : 160;
+  const zStep = isMobile ? 120 : 150;
+
+  slides.forEach((slide, index) => {
+    let offset = index - next;
+    if (offset > slides.length / 2) offset -= slides.length;
+    if (offset < -slides.length / 2) offset += slides.length;
+
+    const distance = Math.abs(offset);
+    const visible = distance <= 2;
+    const y = offset * yStep;
+    const z = -distance * zStep;
+    const scale = distance === 0 ? 1 : distance === 1 ? 0.78 : 0.62;
+    const opacity = distance === 0 ? 1 : distance === 1 ? 0.54 : 0.18;
+    const xRotation = offset * (isMobile ? 10 : 12);
+
+    slide.classList.toggle('active', offset === 0);
+    slide.setAttribute('aria-hidden', visible ? 'false' : 'true');
+    slide.style.transform = `translate(-50%, -50%) translate3d(0, ${y}px, ${z}px) rotateX(${xRotation}deg) scale(${scale})`;
+    slide.style.opacity = visible ? opacity : 0;
+    slide.style.filter = distance === 0 ? 'none' : `saturate(${1 - distance * 0.18}) brightness(${1 - distance * 0.16})`;
+    slide.style.zIndex = String(100 - distance);
+  });
+
+  dotsWrap?.querySelectorAll('.frupix-carousel-dot').forEach((dot, index) => {
+    dot.classList.toggle('active', index === next);
+  });
+};
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ===== RENDER PROJECTS ===== */
@@ -302,7 +456,8 @@ document.addEventListener('DOMContentLoaded', () => {
     'telecom': '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>',
     'body': '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="4" r="2.5"/><path d="M15 8H9l-4 8h4l1 6h4l1-6h4z"/></svg>',
     'github': '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>',
-    'demo': '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6m4-3h6v6m-11 5L21 3"/></svg>'
+    'demo': '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6m4-3h6v6m-11 5L21 3"/></svg>',
+    'sales': '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18M7 16V9m4 7v-4m4 4V7m4 9v-6"/></svg>'
   };
 
   if (projectsGrid && DATA.projects) {
@@ -331,6 +486,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <span class="placeholder-text">UI Screenshot / Architecture Diagram</span>
                 </div>`
               }
+              ${(proj.extraScreenshots || []).map(s => `<img src="${s}" alt="${proj.title}" class="project-screenshot" loading="lazy" style="margin-top:1rem" />`).join('')}
             </div>
             <div class="project-content">
               <div>
@@ -374,6 +530,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }).join('');
   }
 
+  /* ===== FRUPIX VERTICAL CAROUSEL ===== */
+  const frupixStage = document.getElementById('frupix-carousel-stage');
+  const frupixDots = document.getElementById('frupix-carousel-dots');
+  const frupixPrev = document.getElementById('frupix-prev');
+  const frupixNext = document.getElementById('frupix-next');
+
+  if (frupixStage) {
+    const slides = Array.from(frupixStage.querySelectorAll('.frupix-slide'));
+    if (frupixDots) {
+      frupixDots.innerHTML = slides.map((_, i) => `<span class="frupix-carousel-dot${i === 0 ? ' active' : ''}"></span>`).join('');
+    }
+    frupixStage.dataset.activeIndex = '0';
+    window.rotateFrupixCarousel(0);
+    frupixPrev?.addEventListener('click', () => window.rotateFrupixCarousel(-1));
+    frupixNext?.addEventListener('click', () => window.rotateFrupixCarousel(1));
+    window.addEventListener('resize', () => window.rotateFrupixCarousel(0));
+    document.addEventListener('keydown', e => {
+      if (document.activeElement?.closest('#frupix')) {
+        if (e.key === 'ArrowUp') window.rotateFrupixCarousel(-1);
+        if (e.key === 'ArrowDown') window.rotateFrupixCarousel(1);
+      }
+    });
+  }
+
 	  /* ===== 3D CERTIFICATIONS LANDSCAPE ===== */
 	  const certLandscape = document.getElementById('cert-landscape');
   const certPrev = document.getElementById('cert-prev');
@@ -382,9 +562,24 @@ document.addEventListener('DOMContentLoaded', () => {
 	  if (certLandscape && DATA.certificates) {
 	    // Generate HTML
     certLandscape.innerHTML = DATA.certificates.map((cert, i) => `
-      <button class="cert-card hover-target" type="button" data-index="${i}" data-img="assets/certifications/${cert.file}" data-link="${cert.link}" aria-label="Open certificate ${i + 1}" onclick="window.openCertificateCard(this)">
-        <img src="assets/certifications/${cert.file}" alt="Certificate ${i + 1}" loading="lazy" />
-      </button>
+      <article class="cert-card hover-target" data-index="${i}" data-img="assets/certifications/${cert.file}" data-link="${cert.link}" tabindex="0" role="button" aria-label="Open certificate ${i + 1}" onclick="window.openCertificateCard(this)">
+        <div class="cert-slide-photo">
+          <img src="assets/certifications/${cert.file}" alt="${cert.title}" loading="lazy" />
+        </div>
+        <div class="cert-slide-info">
+          <div class="cert-slide-head">
+            <div>
+              <h3 class="cert-slide-title">${cert.title}</h3>
+              <p class="cert-slide-provider">${cert.source}</p>
+            </div>
+            <p class="cert-slide-date">${cert.date}</p>
+          </div>
+          <p class="cert-slide-desc">${cert.summary} ${cert.summary2}</p>
+          ${cert.link
+            ? `<a href="${cert.link}" class="cert-link-btn cert-slide-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">Verify Credential</a>`
+            : `<span class="cert-link-btn cert-slide-link cert-link-disabled">Verification Unavailable</span>`}
+        </div>
+      </article>
     `).join('');
 
     certLandscape.dataset.activeIndex = '0';
@@ -559,14 +754,6 @@ function initGSAP() {
     gsap.from(step, {
       scrollTrigger: { trigger: step, start: 'top 85%' },
       opacity: 0, xPercent: -20, duration: 0.8, delay: i * 0.1, ease: 'power2.out'
-    });
-  });
-
-  // FruPix gallery
-  gsap.utils.toArray('.gallery-img').forEach((img, i) => {
-    gsap.from(img, {
-      scrollTrigger: { trigger: img, start: 'top 90%' },
-      opacity: 0, scale: 0.9, duration: 0.6, delay: i * 0.1, ease: 'power2.out'
     });
   });
 
