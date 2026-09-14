@@ -1930,6 +1930,14 @@ h5 {
   margin-bottom: 1.05rem;
 }
 
+.cert-slide-id {
+  margin: -0.15rem 0 0.65rem;
+  color: var(--cl-accent);
+  font-family: monospace;
+  font-size: clamp(0.72rem, 1vw, 0.86rem);
+  letter-spacing: 0.04em;
+}
+
 .cert-slide-link {
   min-width: 210px;
   border-radius: 16px;
@@ -2018,16 +2026,22 @@ h5 {
 }
 
 @media (max-width: 768px) {
+  .certifications {
+    padding-top: 7rem;
+    scroll-margin-top: 4.5rem;
+  }
+
   .cert-landscape-container {
-    height: 640px;
+    height: 700px;
     margin-top: 2rem;
   }
   .cert-card {
     width: min(86vw, 560px);
-    min-height: 580px;
+    min-height: 620px;
     padding: 0.9rem;
   }
   .cert-nav {
+    top: 8.5rem;
     width: 48px;
     height: 48px;
   }
@@ -2043,7 +2057,12 @@ h5 {
   }
 
   .cert-slide-date {
-    justify-self: end;
+    justify-self: start;
+  }
+
+  .cert-slide-head {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
   }
 
   .cert-slide-desc {

@@ -110,17 +110,128 @@ const DATA = {
       status: 'Planned',
       priority: 'low'
     },
-    {
-      type: 'cert',
-      title: 'Microsoft PL-300 (Power BI Data Analyst)',
-      desc: 'Industry-recognized Microsoft Power BI certification',
-      domain: 'Business Intelligence',
-      status: 'Studying',
-      priority: 'high'
-    }
   ],
   sliderWords: ['Finance', 'Investment', 'Business', 'Healthcare', 'Technology', 'E-commerce', 'Manufacturing'],
   certificates: [
+    {
+      file: 'google-regression-analysis.jpg',
+      title: 'Regression Analysis: Simplify Complex Data Relationships',
+      source: 'Google',
+      date: 'Issued Sep 2026',
+      credentialId: 'HA698O0M2ROJ',
+      link: 'https://www.coursera.org/account/accomplishments/verify/HA698O0M2ROJ?utm_product=course',
+      summary: 'Applied regression analysis to simplify complex relationships and quantify how variables influence outcomes.',
+      summary2: 'Built, interpreted, and evaluated regression models for evidence-based decision-making.'
+    },
+    {
+      file: 'google-nuts-bolts-machine-learning.jpg',
+      title: 'The Nuts and Bolts of Machine Learning',
+      source: 'Google',
+      date: 'Issued Sep 2026',
+      credentialId: 'CIM0GEPBA873',
+      link: 'https://www.coursera.org/account/accomplishments/verify/CIM0GEPBA873?utm_product=course',
+      summary: 'Developed the practical foundations needed to build supervised machine learning models in Python.',
+      summary2: 'Covered model selection, evaluation, tuning, and communication of results.'
+    },
+    {
+      file: 'google-advanced-data-analytics.jpg',
+      title: 'Google Advanced Data Analytics',
+      source: 'Google',
+      date: 'Issued Aug 2026',
+      credentialId: 'Q07HQP4O9DYT',
+      link: 'https://www.coursera.org/account/accomplishments/professional-cert/certificate/Q07HQP4O9DYT',
+      summary: 'Professional certificate covering data roles, statistical investigation, data visualization, regression, and machine learning.',
+      summary2: 'Focused on interpreting analytical results and communicating insights to stakeholders.'
+    },
+    {
+      file: 'google-advanced-analytics-capstone.jpg',
+      title: 'Google Advanced Data Analytics Capstone',
+      source: 'Google',
+      date: 'Issued Aug 2026',
+      credentialId: '82JZCR3MRCPQ',
+      link: 'https://www.coursera.org/account/accomplishments/verify/82JZCR3MRCPQ',
+      summary: 'Completed an end-to-end advanced analytics case study using data visualization and analytical modeling.',
+      summary2: 'Synthesized technical findings into a clear, stakeholder-ready story.'
+    },
+    {
+      file: 'google-accelerate-job-search-ai.jpg',
+      title: 'Accelerate Your Job Search with AI',
+      source: 'Google',
+      date: 'Issued Aug 2026',
+      credentialId: 'OFTLVU124EEW',
+      link: 'https://www.coursera.org/account/accomplishments/records/OFTLVU124EEW',
+      summary: 'Used generative AI to identify transferable skills, build a career identity, and optimize resumes.',
+      summary2: 'Created a structured job-search strategy and AI-assisted interview and application workflows.'
+    },
+    {
+      file: 'google-power-of-statistics.jpg',
+      title: 'The Power of Statistics',
+      source: 'Google',
+      date: 'Issued Aug 2026',
+      credentialId: 'VTASYZOSHIW8',
+      link: 'https://www.coursera.org/account/accomplishments/records/VTASYZOSHIW8',
+      summary: 'Explored datasets, modeled data with probability distributions, and conducted hypothesis tests.',
+      summary2: 'Performed statistical analysis in Python to uncover defensible insights.'
+    },
+    {
+      file: 'google-beyond-the-numbers.jpg',
+      title: 'Go Beyond the Numbers: Translate Data into Insights',
+      source: 'Google',
+      date: 'Issued Aug 2026',
+      credentialId: '7M3QTHEST6OZ',
+      link: 'https://www.coursera.org/account/accomplishments/records/7M3QTHEST6OZ',
+      summary: 'Applied the exploratory data analysis process to structure, clean, and investigate raw data with Python.',
+      summary2: 'Created Tableau visualizations that translate analysis into accessible insights.'
+    },
+    {
+      file: 'google-foundations-data-science.jpg',
+      title: 'Foundations of Data Science',
+      source: 'Google',
+      date: 'Issued Aug 2026',
+      credentialId: '10MAUAL2IHN0',
+      link: 'https://www.coursera.org/account/accomplishments/records/10MAUAL2IHN0',
+      summary: 'Explored data careers, analytical decision-making, privacy, ethics, and responsible data practice.',
+      summary2: 'Developed project plans that define team roles, responsibilities, and delivery expectations.'
+    },
+    {
+      file: 'microsoft-power-bi-data-analyst.jpg',
+      title: 'Microsoft Certified: Power BI Data Analyst Associate',
+      source: 'Microsoft',
+      date: 'Issued Jul 2026 · Expires Jul 2027',
+      credentialId: 'EE349F34C356C09',
+      link: 'https://learn.microsoft.com/api/credentials/share/en-gb/94456688/EE349F34C356C09?sharingId=30304A530DC9F0C3',
+      summary: 'Microsoft-certified in preparing, modeling, visualizing, and analyzing data with Power BI.',
+      summary2: 'Validated Power Query, DAX, interactive dashboard, data security, and business insight delivery skills.'
+    },
+    {
+      file: 'aws-ai-practitioner.png',
+      title: 'AWS AI Practitioner Challenge',
+      source: 'Udacity · AWS',
+      date: 'Issued May 2026',
+      link: 'https://www.udacity.com/certificate/e/4ab7231a-3052-11f1-bd18-67e1805b269d',
+      summary: 'Completed the AWS AI Practitioner Challenge covering artificial intelligence, machine learning, and generative AI.',
+      summary2: 'Built foundational knowledge of AWS AI and machine learning services.'
+    },
+    {
+      file: 'aws-partyrock-project.jpg',
+      title: 'AWS Scholars Program Project Badge: Analyze Data using AI with PartyRock',
+      source: 'Udacity · AWS',
+      date: 'Issued Mar 2026',
+      link: 'https://cdn.getblueshift.com/bee/images/ed5b8755-0989-4944-9ca5-287bb68e4a22/AWS%20AI%20%26%20ML%20Scholarship%20Badges%20-%20Project%20-%20Analyze%20Data%20-%20Dark%403x.jpg',
+      linkLabel: 'View Badge',
+      summary: 'Earned the AWS Scholars project badge by analyzing data with an AI application built in PartyRock.',
+      summary2: 'Applied AWS AI services to turn a data question into an interactive generative AI workflow.'
+    },
+    {
+      file: 'aws-ai-ml-scholars.jpg',
+      title: 'AWS AI & ML Scholars - 2026 Challenge Completion',
+      source: 'Udacity · AWS',
+      date: 'Issued Mar 2026',
+      link: 'https://cdn.getblueshift.com/bee/images/ed5b8755-0989-4944-9ca5-287bb68e4a22/Challenge%20Completion%20Badge_Light.png',
+      linkLabel: 'View Badge',
+      summary: 'Completed the 2026 AWS AI & ML Scholars challenge through Udacity.',
+      summary2: 'Strengthened applied data analytics, AWS AI services, and machine learning foundations.'
+    },
     { file: 'Coursera 6XPZGPMPUU46.png', link: 'https://coursera.org/verify/6XPZGPMPUU46' },
     { file: 'Coursera JBVQ4KB33A67.png', link: 'https://coursera.org/verify/JBVQ4KB33A67' },
     { file: 'certificate (1).png', link: '' },
@@ -291,14 +402,14 @@ function humanizeCertificateFileName(file) {
 
 DATA.certificates = DATA.certificates.map((cert, index) => {
   const override = CERT_OVERRIDES[cert.file];
-  const source = override?.source || (cert.file.includes('Coursera') ? 'Coursera' : 'Professional Learning Platform');
+  const source = cert.source || override?.source || (cert.file.includes('Coursera') ? 'Coursera' : 'Professional Learning Platform');
   return {
     ...cert,
-    title: override?.title || humanizeCertificateFileName(cert.file),
+    title: cert.title || override?.title || humanizeCertificateFileName(cert.file),
     source,
-    date: override?.date || 'Issued date available on certificate',
-    summary: override?.summary || 'Credential validating applied analytics and data workflow competence.',
-    summary2: override?.summary2 || 'Covers practical techniques used in real-world business intelligence projects.',
+    date: cert.date || override?.date || 'Issued date available on certificate',
+    summary: cert.summary || override?.summary || 'Credential validating applied analytics and data workflow competence.',
+    summary2: cert.summary2 || override?.summary2 || 'Covers practical techniques used in real-world business intelligence projects.',
     id: `cert-${index + 1}`
   };
 });
@@ -562,7 +673,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	  if (certLandscape && DATA.certificates) {
 	    // Generate HTML
     certLandscape.innerHTML = DATA.certificates.map((cert, i) => `
-      <article class="cert-card hover-target" data-index="${i}" data-img="assets/certifications/${cert.file}" data-link="${cert.link}" tabindex="0" role="button" aria-label="Open certificate ${i + 1}" onclick="window.openCertificateCard(this)">
+      <article class="cert-card hover-target" data-index="${i}" data-img="assets/certifications/${cert.file}" data-link="${cert.link || ''}" tabindex="0" role="button" aria-label="Open ${cert.title} certificate" onclick="window.openCertificateCard(this)">
         <div class="cert-slide-photo">
           <img src="assets/certifications/${cert.file}" alt="${cert.title}" loading="lazy" />
         </div>
@@ -574,9 +685,10 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <p class="cert-slide-date">${cert.date}</p>
           </div>
+          ${cert.credentialId ? `<p class="cert-slide-id">Credential ID ${cert.credentialId}</p>` : ''}
           <p class="cert-slide-desc">${cert.summary} ${cert.summary2}</p>
           ${cert.link
-            ? `<a href="${cert.link}" class="cert-link-btn cert-slide-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">Verify Credential</a>`
+            ? `<a href="${cert.link}" class="cert-link-btn cert-slide-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">${cert.linkLabel || 'Verify Credential'}</a>`
             : `<span class="cert-link-btn cert-slide-link cert-link-disabled">Verification Unavailable</span>`}
         </div>
       </article>
