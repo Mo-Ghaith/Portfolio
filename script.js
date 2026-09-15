@@ -430,92 +430,6 @@ window.toggleProjectCard = header => {
   header.setAttribute('aria-expanded', card.classList.contains('open') ? 'true' : 'false');
 };
 
-window.openCertificateCard = card => {
-  if (!card.classList.contains('active')) return;
-
-  const certModal = document.getElementById('cert-modal');
-  const certModalImg = document.getElementById('cert-modal-img');
-  const certModalActions = document.getElementById('cert-modal-actions');
-  const certModalClose = document.getElementById('cert-modal-close');
-  if (!certModal || !certModalImg || !certModalActions || !certModalClose) return;
-
-  const imgSrc = card.getAttribute('data-img');
-  const link = card.getAttribute('data-link');
-
-  certModalImg.src = imgSrc;
-  certModalActions.innerHTML = link ? `<a href="${link}" class="cert-link-btn" target="_blank" rel="noopener">View Certificate</a>` : '';
-
-  certModal.classList.add('active');
-  certModal.setAttribute('aria-hidden', 'false');
-  document.body.classList.add('modal-open');
-  certModalClose.focus();
-};
-
-window.rotateCertificates = direction => {
-  const certLandscape = document.getElementById('cert-landscape');
-  if (!certLandscape) return;
-
-  const cards = Array.from(certLandscape.querySelectorAll('.cert-card'));
-  if (!cards.length) return;
-
-  const current = Number(certLandscape.dataset.activeIndex || 0);
-  const next = (current + direction + cards.length) % cards.length;
-  certLandscape.dataset.activeIndex = String(next);
-
-  const isMobile = window.innerWidth < 769;
-  cards.forEach((card, index) => {
-    let logicalOffset = index - next;
-    if (logicalOffset > cards.length / 2) logicalOffset -= cards.length;
-    if (logicalOffset < -cards.length / 2) logicalOffset += cards.length;
-
-    const distance = Math.abs(logicalOffset);
-    const visible = distance <= 2;
-    const xStep = isMobile ? 330 : 520;
-    const zStep = isMobile ? 180 : 230;
-    const x = logicalOffset * xStep;
-    const z = -distance * zStep;
-    const scale = distance === 0 ? 1 : distance === 1 ? 0.72 : 0.58;
-    const opacity = distance === 0 ? 1 : distance === 1 ? 0.46 : 0.14;
-    const yRotation = logicalOffset * (isMobile ? -14 : -18);
-
-    card.dataset.offset = String(logicalOffset);
-    card.classList.toggle('active', logicalOffset === 0);
-    card.classList.toggle('near', Math.abs(logicalOffset) === 1);
-    card.classList.toggle('far', Math.abs(logicalOffset) >= 2);
-    card.classList.toggle('hidden-depth', !visible);
-    card.setAttribute('aria-hidden', visible ? 'false' : 'true');
-    card.tabIndex = visible ? 0 : -1;
-
-    card.style.transform = `translate(-50%, -50%) translate3d(${x}px, 0, ${z}px) rotateY(${yRotation}deg) scale(${scale})`;
-    card.style.opacity = visible ? opacity : 0;
-    card.style.zIndex = String(Math.round(100 + z));
-  });
-
-  window.updateCertificateMeta(next);
-};
-
-window.updateCertificateMeta = activeIndex => {
-  const cert = DATA.certificates?.[activeIndex];
-  if (!cert) return;
-
-  const sourceEl = document.getElementById('cert-meta-source');
-  const dateEl = document.getElementById('cert-meta-date');
-  const titleEl = document.getElementById('cert-meta-title');
-  const summaryEl = document.getElementById('cert-meta-summary');
-  const summary2El = document.getElementById('cert-meta-summary-2');
-  const actionsEl = document.getElementById('cert-meta-actions');
-  if (!sourceEl || !dateEl || !titleEl || !summaryEl || !summary2El || !actionsEl) return;
-
-  sourceEl.textContent = cert.source;
-  dateEl.textContent = cert.date;
-  titleEl.textContent = cert.title;
-  summaryEl.textContent = cert.summary;
-  summary2El.textContent = cert.summary2;
-  actionsEl.innerHTML = cert.link
-    ? `<a href="${cert.link}" class="cert-link-btn" target="_blank" rel="noopener">Verify Credential</a>`
-    : '<span class="roadmap-domain">Verification link unavailable</span>';
-};
-
 window.rotateFrupixCarousel = direction => {
   const stage = document.getElementById('frupix-carousel-stage');
   const dotsWrap = document.getElementById('frupix-carousel-dots');
@@ -574,7 +488,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (projectsGrid && DATA.projects) {
     projectsGrid.innerHTML = DATA.projects.map((proj, i) => `
       <div class="project-card" data-index="${i}">
-        <button class="project-header hover-target" type="button" aria-expanded="false" aria-controls="project-detail-${i}" onclick="window.toggleProjectCard(this)">
+        <button class="project-header hover-target" type="button" aria-expanded="false" aria-controls="project-detail-${i}">
           <div class="project-icon">${projectIcons[proj.icon] || projectIcons['body']}</div>
           <div>
             <h3 class="project-title">${proj.title}</h3>
@@ -597,7 +511,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <span class="placeholder-text">UI Screenshot / Architecture Diagram</span>
                 </div>`
               }
-              ${(proj.extraScreenshots || []).map(s => `<img src="${s}" alt="${proj.title}" class="project-screenshot" loading="lazy" style="margin-top:1rem" />`).join('')}
+              ${(proj.extraScreenshots || []).map(s => `<img src="${s}" alt="${proj.title}" class="project-screenshot project-screenshot-extra" loading="lazy" />`).join('')}
             </div>
             <div class="project-content">
               <div>
@@ -619,6 +533,11 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
     `).join('');
+
+    projectsGrid.addEventListener('click', event => {
+      const header = event.target.closest('.project-header');
+      if (header) window.toggleProjectCard(header);
+    });
 
   }
 
@@ -665,68 +584,67 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-	  /* ===== 3D CERTIFICATIONS LANDSCAPE ===== */
-	  const certLandscape = document.getElementById('cert-landscape');
-  const certPrev = document.getElementById('cert-prev');
-  const certNext = document.getElementById('cert-next');
+	  /* ===== CREDENTIAL DIRECTORY ===== */
+  const credentialGrid = document.getElementById('credential-grid');
+  const credentialToggle = document.getElementById('credential-toggle');
+  const credentialFilters = Array.from(document.querySelectorAll('.credential-filter'));
 
-	  if (certLandscape && DATA.certificates) {
-	    // Generate HTML
-    certLandscape.innerHTML = DATA.certificates.map((cert, i) => `
-      <article class="cert-card hover-target" data-index="${i}" data-img="assets/certifications/${cert.file}" data-link="${cert.link || ''}" tabindex="0" role="button" aria-label="Open ${cert.title} certificate" onclick="window.openCertificateCard(this)">
-        <div class="cert-slide-photo">
-          <img src="assets/certifications/${cert.file}" alt="${cert.title}" loading="lazy" />
-        </div>
-        <div class="cert-slide-info">
-          <div class="cert-slide-head">
-            <div>
-              <h3 class="cert-slide-title">${cert.title}</h3>
-              <p class="cert-slide-provider">${cert.source}</p>
-            </div>
-            <p class="cert-slide-date">${cert.date}</p>
-          </div>
-          ${cert.credentialId ? `<p class="cert-slide-id">Credential ID ${cert.credentialId}</p>` : ''}
-          <p class="cert-slide-desc">${cert.summary} ${cert.summary2}</p>
-          ${cert.link
-            ? `<a href="${cert.link}" class="cert-link-btn cert-slide-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">${cert.linkLabel || 'Verify Credential'}</a>`
-            : `<span class="cert-link-btn cert-slide-link cert-link-disabled">Verification Unavailable</span>`}
-        </div>
-      </article>
-    `).join('');
+  if (credentialGrid && credentialToggle && DATA.certificates) {
+    let activeProvider = 'all';
+    let expanded = false;
 
-    certLandscape.dataset.activeIndex = '0';
-    window.rotateCertificates(0);
-    window.updateCertificateMeta(0);
-    certPrev?.addEventListener('click', () => window.rotateCertificates(-1));
-    certNext?.addEventListener('click', () => window.rotateCertificates(1));
-    window.addEventListener('resize', () => window.rotateCertificates(0));
-    document.addEventListener('keydown', e => {
-      if (document.activeElement?.closest('#certifications')) {
-        if (e.key === 'ArrowLeft') window.rotateCertificates(-1);
-        if (e.key === 'ArrowRight') window.rotateCertificates(1);
-      }
-    });
-	  }
-
-  /* ===== CERTIFICATE MODAL ===== */
-  const certModal = document.getElementById('cert-modal');
-  const certModalImg = document.getElementById('cert-modal-img');
-  const certModalActions = document.getElementById('cert-modal-actions');
-  const certModalClose = document.getElementById('cert-modal-close');
-  const certModalBg = document.getElementById('cert-modal-bg');
-
-  if (certLandscape && certModal && certModalImg && certModalActions && certModalClose && certModalBg) {
-    const closeModal = () => {
-      certModal.classList.remove('active');
-      certModal.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('modal-open');
-      certModalImg.removeAttribute('src');
+    const matchesProvider = cert => {
+      if (activeProvider === 'all') return true;
+      return cert.source.toLowerCase().includes(activeProvider.toLowerCase());
     };
-    certModalClose.addEventListener('click', closeModal);
-    certModalBg.addEventListener('click', closeModal);
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && certModal.classList.contains('active')) closeModal();
+
+    const renderCredentials = () => {
+      const matches = DATA.certificates.filter(matchesProvider);
+      const visible = expanded || activeProvider !== 'all' ? matches : matches.slice(0, 12);
+
+      credentialGrid.innerHTML = visible.map(cert => `
+        <article class="credential-card">
+          <div class="credential-card-meta">
+            <span>${cert.source}</span>
+            <span>${cert.date}</span>
+          </div>
+          <h3>${cert.title}</h3>
+          <p>${cert.summary} ${cert.summary2}</p>
+          <div class="credential-card-footer">
+            ${cert.credentialId ? `<span class="credential-id">ID ${cert.credentialId}</span>` : '<span></span>'}
+            ${cert.link
+              ? `<a href="${cert.link}" target="_blank" rel="noopener noreferrer" aria-label="Verify ${cert.title}">${cert.linkLabel || 'Verify credential'} <span aria-hidden="true">↗</span></a>`
+              : '<span class="credential-unavailable">Verification unavailable</span>'}
+          </div>
+        </article>
+      `).join('');
+
+      const canToggle = activeProvider === 'all' && DATA.certificates.length > 12;
+      credentialToggle.hidden = !canToggle;
+      credentialToggle.textContent = expanded ? 'Show selected credentials' : `Show all ${DATA.certificates.length} credentials`;
+      credentialToggle.setAttribute('aria-expanded', String(expanded));
+    };
+
+    credentialFilters.forEach(filter => {
+      filter.addEventListener('click', () => {
+        activeProvider = filter.dataset.provider || 'all';
+        expanded = false;
+        credentialFilters.forEach(item => {
+          const active = item === filter;
+          item.classList.toggle('active', active);
+          item.setAttribute('aria-pressed', String(active));
+        });
+        renderCredentials();
+      });
     });
+
+    credentialToggle.addEventListener('click', () => {
+      expanded = !expanded;
+      renderCredentials();
+      if (!expanded) document.getElementById('certifications')?.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    renderCredentials();
   }
 
   const yearEl = document.getElementById('year');
@@ -735,20 +653,16 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ===== PRELOADER REMOVED (Instant Entry) ===== */
   document.body.classList.remove('loading');
   
-  // Call initGSAP directly
-  // Small timeout ensures DOM is fully painted before calculating scroll metrics
-  setTimeout(() => {
-    initGSAP();
-  }, 100);
+  initMotionEffects();
 
   /* ===== ROTATING WORD SLIDER (Removed — now static) ===== */
   // Feature removed per Fix #2B
 
   /* ===== CUSTOM CURSOR ===== */
   const cursor = document.querySelector('.cursor');
-  if (!window.matchMedia('(max-width: 768px)').matches && cursor && window.gsap) {
+  if (!window.matchMedia('(max-width: 768px), (pointer: coarse)').matches && cursor) {
     document.addEventListener('mousemove', e => {
-      gsap.set(cursor, { x: e.clientX, y: e.clientY });
+      cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
     });
     document.addEventListener('mouseover', e => {
       if (e.target.closest('.hover-target')) cursor.classList.add('active');
@@ -765,162 +679,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-/* ===== GSAP ANIMATIONS ===== */
-function initGSAP() {
-  if (!window.gsap || !window.ScrollTrigger || !window.Lenis) return;
-  gsap.registerPlugin(ScrollTrigger);
+/* ===== NATIVE MOTION ===== */
+function initMotionEffects() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smooth: true });
-  lenis.on('scroll', ScrollTrigger.update);
-  gsap.ticker.add((time) => lenis.raf(time * 1000));
-  gsap.ticker.lagSmoothing(0);
+  const revealItems = document.querySelectorAll(
+    '.section-label, .expertise-item, .stat-item, .project-card, .publication-card, .case-study-step, .roadmap-item, .credential-card'
+  );
+  revealItems.forEach(item => item.classList.add('reveal-ready'));
 
-  // Hero entrance (Staggered instant entry)
-  const heroTl = gsap.timeline();
-  heroTl
-    .from('.hero-greeting-inner', { yPercent: 100, opacity: 0, duration: 0.8, ease: 'power3.out' })
-    .from('.hero-title-line', { yPercent: 120, opacity: 0, duration: 1, ease: 'power3.out', stagger: 0.15 }, '-=0.4')
-    .from('.hero-subtitle', { opacity: 0, yPercent: 30, duration: 0.8, ease: 'power2.out' }, '-=0.5')
-    .from('.scroll-indicator', { opacity: 0, yPercent: 20, duration: 0.6, ease: 'power2.out' }, '-=0.3');
-
-  // Hero parallax
-  gsap.to('.hero-bg img', {
-    yPercent: 15, ease: 'none',
-    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
-  });
-
-  // Intro text blur-fade
-  const introEl = document.querySelector('.intro-text');
-  if (introEl && window.SplitType) {
-    const split = new SplitType(introEl, { types: 'words' });
-    gsap.set(split.words, { opacity: 0.15, filter: 'blur(4px)' });
-    gsap.to(split.words, {
-      scrollTrigger: { trigger: '.intro', start: 'top 70%', end: 'bottom 40%', scrub: 0.5 },
-      opacity: 1, filter: 'blur(0px)', stagger: 0.05, ease: 'none'
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('revealed');
+      observer.unobserve(entry.target);
     });
-  }
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
 
-  // Section labels
-  gsap.utils.toArray('.section-label').forEach(label => {
-    gsap.from(label, {
-      scrollTrigger: { trigger: label, start: 'top 85%' },
-      opacity: 0, xPercent: -10, duration: 0.8, ease: 'power2.out'
-    });
-  });
-
-  // Expertise items
-  gsap.utils.toArray('.expertise-item').forEach((item, i) => {
-    gsap.from(item, {
-      scrollTrigger: { trigger: item, start: 'top 85%' },
-      opacity: 0, yPercent: 30, duration: 0.8, delay: i * 0.1, ease: 'power2.out'
-    });
-  });
-
-  // Stats banner
-  gsap.from('.stats-banner', {
-    scrollTrigger: { trigger: '.stats-banner', start: 'top 85%' },
-    opacity: 0, yPercent: 20, duration: 1, ease: 'power2.out'
-  });
-
-  // Stat numbers count up
-  gsap.utils.toArray('.stat-item h3').forEach(h3 => {
-    const text = h3.textContent;
-    const num = parseInt(text);
-    if (!isNaN(num)) {
-      const suffix = text.replace(num.toString(), '');
-      gsap.from(h3, {
-        scrollTrigger: { trigger: h3, start: 'top 85%' },
-        textContent: 0, duration: 1.5, ease: 'power2.out', snap: { textContent: 1 },
-        onUpdate: function () { h3.textContent = Math.round(gsap.getProperty(h3, 'textContent')) + suffix; }
-      });
-    }
-  });
-
-  // Project cards
-  gsap.utils.toArray('.project-card').forEach((item, i) => {
-    gsap.from(item, {
-      scrollTrigger: { trigger: item, start: 'top 85%' },
-      opacity: 0, yPercent: 20, duration: 0.8, delay: i * 0.08, ease: 'power2.out'
-    });
-  });
-
-  // Publication card
-  const pubCard = document.querySelector('.publication-card');
-  if (pubCard) {
-    gsap.from(pubCard, {
-      scrollTrigger: { trigger: pubCard, start: 'top 80%' },
-      opacity: 0, yPercent: 30, duration: 1, ease: 'power3.out'
-    });
-  }
-
-  // Case study metrics
-  gsap.utils.toArray('.case-study-metric').forEach((m, i) => {
-    gsap.from(m, {
-      scrollTrigger: { trigger: m, start: 'top 85%' },
-      opacity: 0, yPercent: 40, duration: 0.8, delay: i * 0.15, ease: 'power3.out'
-    });
-  });
-
-  // Case study steps
-  gsap.utils.toArray('.case-study-step').forEach((step, i) => {
-    gsap.from(step, {
-      scrollTrigger: { trigger: step, start: 'top 85%' },
-      opacity: 0, xPercent: -20, duration: 0.8, delay: i * 0.1, ease: 'power2.out'
-    });
-  });
-
-  // Roadmap items
-  gsap.utils.toArray('.roadmap-item').forEach((item, i) => {
-    gsap.from(item, {
-      scrollTrigger: { trigger: item, start: 'top 85%' },
-      opacity: 0, yPercent: 25, duration: 0.7, delay: i * 0.08, ease: 'power2.out'
-    });
-  });
-
-  // Contact CTA
-  gsap.from('.contact-huge', {
-    scrollTrigger: { trigger: '.contact', start: 'top 70%' },
-    opacity: 0, yPercent: 40, duration: 1, ease: 'power3.out'
-  });
-  gsap.from('.contact-subtitle', {
-    scrollTrigger: { trigger: '.contact', start: 'top 60%' },
-    opacity: 0, yPercent: 20, duration: 0.8, ease: 'power2.out'
-  });
-
-
-  // Education entries
-  gsap.utils.toArray('.education-entry').forEach((item, i) => {
-    gsap.from(item, {
-      scrollTrigger: { trigger: item, start: 'top 85%' },
-      opacity: 0, xPercent: -15, duration: 0.8, delay: i * 0.15, ease: 'power2.out'
-    });
-  });
-
-  // Education pivot
-  const eduPivot = document.querySelector('.education-pivot');
-  if (eduPivot) {
-    gsap.from(eduPivot, {
-      scrollTrigger: { trigger: eduPivot, start: 'top 85%' },
-      opacity: 0, yPercent: 20, duration: 0.8, ease: 'power2.out'
-    });
-  }
-
-  // Experience entries
-  gsap.utils.toArray('.experience-entry').forEach((item, i) => {
-    gsap.from(item, {
-      scrollTrigger: { trigger: item, start: 'top 85%' },
-      opacity: 0, xPercent: -15, duration: 0.8, delay: i * 0.12, ease: 'power2.out'
-    });
-  });
-
-  // Volunteer cards
-  gsap.utils.toArray('.volunteer-card').forEach((item, i) => {
-    gsap.from(item, {
-      scrollTrigger: { trigger: item, start: 'top 85%' },
-      opacity: 0, yPercent: 25, duration: 0.7, delay: i * 0.1, ease: 'power2.out'
-    });
-  });
+  revealItems.forEach(item => observer.observe(item));
 }
+
 // ===== UI LOGIC =====
 function initUI() {
   // Hire Toggle Logic
