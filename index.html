@@ -9,7 +9,9 @@
   <meta name="robots" content="index, follow" />
   <meta name="keywords" content="Data Analyst, AI Engineer, ML, Business Intelligence, Python, SQL, Power BI, TensorFlow, Cairo, Egypt" />
   <meta name="theme-color" content="#0f1115" />
+  <meta name="color-scheme" content="dark" />
   <title>Mohamed Awni Ghaith | Data & AI Analyst</title>
+  <link rel="canonical" href="https://mo-ghaith.github.io/Portfolio/" />
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="apple-touch-icon" href="icon-192.png" />
 
@@ -18,31 +20,44 @@
   <meta property="og:type" content="website" />
   <meta property="og:description"
     content="Data & AI Analyst combining classical analytics with modern ML/AI. Published researcher, co-founder, builder." />
-  <meta property="og:image" content="IMG_1469.jpeg" />
+  <meta property="og:image" content="https://mo-ghaith.github.io/Portfolio/IMG_1469.jpeg" />
   <meta property="og:image:alt" content="Mohamed Awni Ghaith portfolio portrait" />
+  <meta property="og:url" content="https://mo-ghaith.github.io/Portfolio/" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Mohamed Awni Ghaith | Data & AI Analyst" />
   <meta name="twitter:description" content="Data & AI Analyst. Published researcher, co-founder, builder. Python, SQL, Power BI, Scikit-learn, TensorFlow." />
-  <meta name="twitter:image" content="IMG_1469.jpeg" />
+  <meta name="twitter:image" content="https://mo-ghaith.github.io/Portfolio/IMG_1469.jpeg" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohamed Awni Ghaith",
+      "url": "https://mo-ghaith.github.io/Portfolio/",
+      "image": "https://mo-ghaith.github.io/Portfolio/IMG_1469.jpeg",
+      "jobTitle": "Data Analyst and AI Engineer",
+      "sameAs": [
+        "https://www.linkedin.com/in/mawnighaith/",
+        "https://github.com/Mo-Ghaith",
+        "https://www.kaggle.com/moghaith"
+      ]
+    }
+  </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Libs -->
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js" defer></script>
-  <script src="https://unpkg.com/split-type" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-
-  <link rel="stylesheet" href="style.css?v=20260515-freelance-menu" />
+  <link rel="stylesheet" href="style.css?v=20260915-refactor" />
   <link rel="manifest" href="manifest.json" />
 </head>
 
 <body>
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- Noise Overlay -->
   <div class="noise"></div>
@@ -54,16 +69,16 @@
   <header class="header" id="site-header">
     <div class="logo">
       <a href="#">
-        <img src="logo.png" alt="MAG Logo" />
+        <img src="logo.png" alt="MAG Logo" width="375" height="340" />
       </a>
     </div>
-    <nav class="header-nav" id="main-nav">
+    <nav class="header-nav" id="main-nav" aria-label="Primary navigation">
       <a href="#about" class="txt-link">About</a>
       <a href="#experience" class="txt-link">Experience</a>
       <a href="#work" class="txt-link">Work</a>
       <a href="#publication" class="txt-link">Research</a>
+      <a href="#certifications" class="txt-link">Credentials</a>
       <a href="#contact" class="txt-link">Contact</a>
-      <a href="https://github.com/Mo-Ghaith" class="txt-link" target="_blank" rel="noopener">GitHub</a>
     </nav>
     <div class="hire-toggle" id="hire-toggle" aria-label="Hiring links menu">
       <div class="hire-toggle-buttons">
@@ -86,31 +101,24 @@
         <!-- Freelance panel -->
         <div class="hire-panel hidden" id="panel-freelance">
           <a href="https://www.upwork.com/freelancers/~0149b543007b446a26" target="_blank" rel="noopener" class="hire-link">
-            <img src="assets/upwork-logo.svg" alt="" />
             Upwork
           </a>
           <a href="https://www.freelancer.com/u/MAwni94" target="_blank" rel="noopener" class="hire-link">
-            <img src="assets/freelancer-logo.svg" alt="" />
             Freelancer
           </a>
           <a href="https://www.guru.com/freelancers/mohamed-a-ghaith" target="_blank" rel="noopener" class="hire-link">
-            <img src="assets/guru-logo.png" alt="" />
             Guru
           </a>
           <a href="https://kafiil.com/u/MAwni" target="_blank" rel="noopener" class="hire-link">
-            <img src="assets/kafiil-logo.png" alt="" />
             Kafiil
           </a>
           <a href="https://nafezly.com/u/MAwni" target="_blank" rel="noopener" class="hire-link">
-            <img src="assets/nafezly-logo.svg" alt="" />
             Nafezly
           </a>
           <a href="https://khamsat.com/user/m_awni" target="_blank" rel="noopener" class="hire-link">
-            <img src="https://khamsat.com/favicon.ico" alt="" />
             Khamsat
           </a>
           <a href="https://mostaql.com/u/m_awni" target="_blank" rel="noopener" class="hire-link">
-            <img src="assets/mostaql-logo.svg" alt="" />
             Mostaql
           </a>
         </div>
@@ -129,6 +137,7 @@
       <a href="#experience">Experience</a>
       <a href="#work">Work</a>
       <a href="#publication">Research</a>
+      <a href="#certifications">Credentials</a>
       <a href="#contact">Contact</a>
       <a href="https://github.com/Mo-Ghaith" target="_blank" rel="noopener">GitHub</a>
       <div class="fab-hire">
@@ -139,25 +148,25 @@
         </div>
         <p class="fab-hire-label">Freelance</p>
         <div class="fab-hire-links">
-          <a href="https://www.upwork.com/freelancers/~0149b543007b446a26" target="_blank" rel="noopener"><img src="assets/upwork-logo.svg" alt="" />Upwork</a>
-          <a href="https://www.freelancer.com/u/MAwni94" target="_blank" rel="noopener"><img src="assets/freelancer-logo.svg" alt="" />Freelancer</a>
-          <a href="https://www.guru.com/freelancers/mohamed-a-ghaith" target="_blank" rel="noopener"><img src="assets/guru-logo.png" alt="" />Guru</a>
-          <a href="https://kafiil.com/u/MAwni" target="_blank" rel="noopener"><img src="assets/kafiil-logo.png" alt="" />Kafiil</a>
-          <a href="https://nafezly.com/u/MAwni" target="_blank" rel="noopener"><img src="assets/nafezly-logo.svg" alt="" />Nafezly</a>
-          <a href="https://khamsat.com/user/m_awni" target="_blank" rel="noopener"><img src="https://khamsat.com/favicon.ico" alt="" />Khamsat</a>
-          <a href="https://mostaql.com/u/m_awni" target="_blank" rel="noopener"><img src="assets/mostaql-logo.svg" alt="" />Mostaql</a>
+          <a href="https://www.upwork.com/freelancers/~0149b543007b446a26" target="_blank" rel="noopener">Upwork</a>
+          <a href="https://www.freelancer.com/u/MAwni94" target="_blank" rel="noopener">Freelancer</a>
+          <a href="https://www.guru.com/freelancers/mohamed-a-ghaith" target="_blank" rel="noopener">Guru</a>
+          <a href="https://kafiil.com/u/MAwni" target="_blank" rel="noopener">Kafiil</a>
+          <a href="https://nafezly.com/u/MAwni" target="_blank" rel="noopener">Nafezly</a>
+          <a href="https://khamsat.com/user/m_awni" target="_blank" rel="noopener">Khamsat</a>
+          <a href="https://mostaql.com/u/m_awni" target="_blank" rel="noopener">Mostaql</a>
         </div>
       </div>
     </div>
   </div>
 
-  <main id="smooth-wrapper">
+  <main id="main-content">
     <div id="smooth-content">
 
       <!-- Hero -->
       <section class="hero section" id="hero">
         <div class="hero-bg">
-          <img src="IMG_1469.jpeg" alt="Mohamed Awni Ghaith — Data & AI Analyst" />
+          <img src="IMG_1469.jpeg" alt="Mohamed Awni Ghaith — Data & AI Analyst" width="1024" height="1024" fetchpriority="high" />
         </div>
 
         <div class="hero-content">
@@ -236,112 +245,10 @@
         <div class="container">
           <p class="section-label">Tech Stack & Expertise</p>
           
-          <div class="keyboard-grid" id="keyboard-grid">
-            <div class="key hover-target">
-              <div class="key-top">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
-                <span>Python</span>
-              </div>
-              <div class="key-side"></div>
-              <div class="key-front"></div>
-            </div>
-            <div class="key hover-target">
-              <div class="key-top">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL" />
-                <span>SQL</span>
-              </div>
-              <div class="key-side"></div>
-              <div class="key-front"></div>
-            </div>
-            <div class="key hover-target">
-              <div class="key-top">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI" />
-                <span>Power BI</span>
-              </div>
-              <div class="key-side"></div>
-              <div class="key-front"></div>
-            </div>
-            <div class="key hover-target">
-              <div class="key-top">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" />
-                <span>TensorFlow</span>
-              </div>
-              <div class="key-side"></div>
-              <div class="key-front"></div>
-            </div>
-            <div class="key hover-target">
-              <div class="key-top">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" />
-                <span>Pandas</span>
-              </div>
-              <div class="key-side"></div>
-              <div class="key-front"></div>
-            </div>
-            <div class="key hover-target">
-              <div class="key-top">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Microsoft_Office_Excel_%282019%E2%80%932025%29.svg" alt="Microsoft Excel" />
-                <span>Excel</span>
-              </div>
-              <div class="key-side"></div>
-              <div class="key-front"></div>
-            </div>
-            <div class="key hover-target">
-              <div class="key-top">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/SPSS_An_IBM_Company_logo.svg" alt="IBM SPSS" />
-                <span>IBM SPSS</span>
-              </div>
-              <div class="key-side"></div>
-              <div class="key-front"></div>
-            </div>
-            <div class="key hover-target">
-              <div class="key-top">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" />
-                <span>Matplotlib</span>
-              </div>
-              <div class="key-side"></div>
-              <div class="key-front"></div>
-            </div>
-            <div class="key hover-target">
-              <div class="key-top">
-                <img src="https://cdn.simpleicons.org/plotly/3F4F75" alt="Plotly" />
-                <span>Plotly</span>
-              </div>
-              <div class="key-side"></div>
-              <div class="key-front"></div>
-            </div>
-            <div class="key hover-target">
-              <div class="key-top">
-                <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn" />
-                <span>Seaborn</span>
-              </div>
-              <div class="key-side"></div>
-              <div class="key-front"></div>
-            </div>
-            <div class="key hover-target">
-              <div class="key-top">
-                <img class="logo-wide" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Orange_rgb_logotype_basic_vertical.png" alt="Orange Data Mining" />
-                <span>Orange</span>
-              </div>
-              <div class="key-side"></div>
-              <div class="key-front"></div>
-            </div>
-            <div class="key hover-target">
-              <div class="key-top">
-                <img class="logo-tableau" src="https://cdn.jsdelivr.net/npm/@coreui/icons@3.0.1/svg/brand/cib-tableau.svg" alt="Tableau" />
-                <span>Tableau</span>
-              </div>
-              <div class="key-side"></div>
-              <div class="key-front"></div>
-            </div>
-            <div class="key hover-target">
-              <div class="key-top">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-Learn" />
-                <span>Scikit-Learn</span>
-              </div>
-              <div class="key-side"></div>
-              <div class="key-front"></div>
-            </div>
-          </div>
+          <ul class="tool-list" aria-label="Core tools">
+            <li>Python</li><li>SQL</li><li>Power BI</li><li>Excel</li><li>Tableau</li>
+            <li>Pandas</li><li>Scikit-learn</li><li>TensorFlow</li><li>SPSS</li><li>Data Visualization</li>
+          </ul>
 
           <div class="expertise-wrapper">
             <div class="expertise-item hover-target">
@@ -664,17 +571,16 @@
       <section class="certifications section" id="certifications">
         <div class="container">
           <h2 class="roadmap-title">Professional Credentials</h2>
-          <div class="cert-landscape-container" id="cert-landscape-container">
-            <button class="cert-nav cert-nav-prev hover-target" type="button" aria-label="Previous certificate" id="cert-prev">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 18l-6-6 6-6"/></svg>
-            </button>
-            <div class="cert-landscape" id="cert-landscape">
-              <!-- Injected via JS -->
-            </div>
-            <button class="cert-nav cert-nav-next hover-target" type="button" aria-label="Next certificate" id="cert-next">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6l6 6-6 6"/></svg>
-            </button>
+          <p class="roadmap-subtitle">31 credentials across advanced analytics, machine learning, business intelligence, and applied AI.</p>
+          <div class="credential-toolbar" role="group" aria-label="Filter credentials">
+            <button class="credential-filter active" type="button" data-provider="all" aria-pressed="true">All</button>
+            <button class="credential-filter" type="button" data-provider="Google" aria-pressed="false">Google</button>
+            <button class="credential-filter" type="button" data-provider="Microsoft" aria-pressed="false">Microsoft</button>
+            <button class="credential-filter" type="button" data-provider="Udacity" aria-pressed="false">AWS / Udacity</button>
+            <button class="credential-filter" type="button" data-provider="DataCamp" aria-pressed="false">DataCamp</button>
           </div>
+          <div class="credential-grid" id="credential-grid" aria-live="polite"></div>
+          <button class="credential-toggle hover-target" id="credential-toggle" type="button" aria-expanded="false">Show all 31 credentials</button>
         </div>
       </section>
 
@@ -756,23 +662,7 @@
     </div>
   </main>
 
-  <!-- Certificate Modal -->
-  <div class="cert-modal" id="cert-modal" role="dialog" aria-modal="true" aria-label="Certificate preview" aria-hidden="true">
-    <div class="cert-modal-bg" id="cert-modal-bg"></div>
-    <div class="cert-modal-content">
-      <button class="cert-modal-close hover-target" id="cert-modal-close" aria-label="Close certificate preview">
-        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-      </button>
-      <div class="cert-modal-img-wrap">
-        <img src="" alt="Certificate" id="cert-modal-img" />
-      </div>
-      <div id="cert-modal-actions" class="cert-modal-actions">
-        <!-- Injected via JS -->
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js?v=20260515-freelance-menu"></script>
+  <script src="script.js?v=20260915-refactor"></script>
 </body>
 
 </html>
